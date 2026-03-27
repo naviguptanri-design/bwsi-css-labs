@@ -60,23 +60,23 @@ def main():
     operation = input("Enter the operation (add, subtract, multiply, divide): ").strip().lower()
 
     my_list= ["add","subtract","multiply","divide"]
-    InputOperation = my_list
+        
 
-    InputNotCorrect = check_if_number(num1) and check_if_number(num2) and not InputOperation
-    if(not InputNotCorrect):
+    InputCorrect = check_if_number(num1) and check_if_number(num2) and operation in my_list
+    if(not InputCorrect):
         print("The numbers/operations entered are incorrect. Try again!!")
 
    
-    while not InputNotCorrect:
+    while not InputCorrect:
         # Ask the user for sample input    
         num1 = input("Enter the first number: ")
         num2 = input("Enter the second number: ")
         operation = input("Enter the operation (add, subtract, multiply, divide): ").strip().lower()
 
-        InputNotCorrect = check_if_number(num1) and check_if_number(num2)
+        InputCorrect = check_if_number(num1) and check_if_number(num2) and operation in my_list
 
-        if(not InputNotCorrect):
-            print("The numbers entered are incorrect. Try again!!")
+        if(not InputCorrect):
+            print("The numbers/operations entered are incorrect. Try again!!")
 
 # Perform the calculation and display the result
     result = simple_calculator(operation, float(num1), float(num2))
